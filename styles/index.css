@@ -425,15 +425,37 @@ footer {
 
     .nav-links li {
         text-align: center;
+        width: 100%;
+        /* Wider hit area */
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        display: block;
+        /* Full tap area */
+        font-size: 0.9rem;
+        /* Readable size */
     }
 
     /* Mobile Typography & Layout */
     .hero-section {
+        min-height: 100svh;
+        /* Use SVH for mobile browsers */
         align-items: flex-end;
-        /* Align bottom for mobile drama */
-        padding-bottom: 20vh;
+        padding-bottom: 25vh;
+        /* More space for visual impact */
         text-align: left;
         padding-left: 1.5rem;
+    }
+
+    /* Fix Layer Overlap with Ticker */
+    /* Move ticker to top on mobile or ensure nav sits well above it */
+    /* In this case, Nav is floating, Ticker is bottom: 10px.
+       Let's ensure Ticker doesn't block interactions. */
+
+    .nav-bar {
+        /* Lift nav slightly higher if needed */
+        bottom: 4rem;
     }
 
     .hero-content {
@@ -516,8 +538,37 @@ footer {
         /* Space for bottom nav */
     }
 
+    /* Mobile Form UX */
+    .input-group input {
+        font-size: 16px !important;
+        /* Forces iOS to not zoom */
+        padding: 1.5rem 0;
+        /* Larger touch target */
+    }
+
+    .btn-submit {
+        padding: 1.5rem;
+        font-size: 1rem;
+        min-height: 60px;
+        /* Minimum height for touch */
+    }
+
     .footer-content {
-        padding-bottom: 6rem;
+        padding-bottom: 8rem;
         /* Space for bottom nav */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Specific adjustment for ticker if we could target it via CSS,
+       but it's inserted via JS with inline styles.
+       We'll rely on our CSS class if we added one, checking main.js...
+       The ticker has class .data-ticker. */
+    .data-ticker {
+        top: 60px !important;
+        /* Move to top, below potential browser UI */
+        bottom: auto !important;
+        background: rgba(0, 0, 0, 0.5);
     }
 }
