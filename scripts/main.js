@@ -80,3 +80,33 @@ function animate() {
 }
 
 animate();
+
+// Data Ticker
+const ticker = document.createElement('div');
+ticker.className = 'data-ticker';
+ticker.style.position = 'fixed';
+ticker.style.bottom = '10px';
+ticker.style.left = '0';
+ticker.style.width = '100%';
+ticker.style.fontFamily = 'monospace';
+ticker.style.fontSize = '10px';
+ticker.style.color = 'var(--accent-color)';
+ticker.style.whiteSpace = 'nowrap';
+ticker.style.opacity = '0.7';
+ticker.style.zIndex = '9998'; /* Below scanner, above bg */
+ticker.style.pointerEvents = 'none';
+ticker.style.overflow = 'hidden';
+document.body.appendChild(ticker);
+
+function updateTicker() {
+    const pairs = ['BTC', 'ETH', 'SOL', 'XMR', 'VIX', 'NDX'];
+    let text = '';
+    for (let i = 0; i < 10; i++) {
+        const pair = pairs[Math.floor(Math.random() * pairs.length)];
+        const val = (Math.random() * 10000).toFixed(2);
+        text += `${pair}: ${val} // `;
+    }
+    ticker.innerText = text + text; // Duplicate for filling
+}
+
+setInterval(updateTicker, 500); // Frenetic update
