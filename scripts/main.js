@@ -1,5 +1,30 @@
 console.log('SOVEREIGN SYSTEMS // ONLINE');
 
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Loaded');
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerText = navLinks.classList.contains('active') ? 'CLOSE' : 'MENU';
+        });
+
+        // Close on click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerText = 'MENU';
+            });
+        });
+    }
+
+    // Mobile Menu Logic Initialized
+});
+
 // Smooth Scroll for Anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -38,10 +63,10 @@ class Particle {
     constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.size = Math.random() * 200 + 100;
-        this.alpha = Math.random() * 0.05;
+        this.vx = (Math.random() - 0.5) * 0.1; /* Slowed down for luxury */
+        this.vy = (Math.random() - 0.5) * 0.1;
+        this.size = Math.random() * 150 + 50; /* Smaller */
+        this.alpha = Math.random() * 0.02; /* Fainter */
     }
 
     update() {
@@ -57,7 +82,7 @@ class Particle {
     draw() {
         ctx.beginPath();
         const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
-        gradient.addColorStop(0, `rgba(100, 100, 100, ${this.alpha})`);
+        gradient.addColorStop(0, `rgba(150, 150, 150, ${this.alpha})`); /* Slightly warmer grey */
         gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = gradient;
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -66,7 +91,7 @@ class Particle {
 }
 
 // Init particles
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 15; i++) { /* Fewer particles */
     particles.push(new Particle());
 }
 
@@ -81,32 +106,4 @@ function animate() {
 
 animate();
 
-// Data Ticker
-const ticker = document.createElement('div');
-ticker.className = 'data-ticker';
-ticker.style.position = 'fixed';
-ticker.style.bottom = '10px';
-ticker.style.left = '0';
-ticker.style.width = '100%';
-ticker.style.fontFamily = 'monospace';
-ticker.style.fontSize = '10px';
-ticker.style.color = 'var(--accent-color)';
-ticker.style.whiteSpace = 'nowrap';
-ticker.style.opacity = '0.7';
-ticker.style.zIndex = '9998'; /* Below scanner, above bg */
-ticker.style.pointerEvents = 'none';
-ticker.style.overflow = 'hidden';
-document.body.appendChild(ticker);
-
-function updateTicker() {
-    const pairs = ['BTC', 'ETH', 'SOL', 'XMR', 'VIX', 'NDX'];
-    let text = '';
-    for (let i = 0; i < 10; i++) {
-        const pair = pairs[Math.floor(Math.random() * pairs.length)];
-        const val = (Math.random() * 10000).toFixed(2);
-        text += `${pair}: ${val} // `;
-    }
-    ticker.innerText = text + text; // Duplicate for filling
-}
-
-setInterval(updateTicker, 500); // Frenetic update
+/* Ticker Removed for V4 (Quiet Luxury) */
