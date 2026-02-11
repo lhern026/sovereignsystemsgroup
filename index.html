@@ -2,141 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOVEREIGN SYSTEMS // FORESIGHT</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles/index.css">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSG // Remotion Powered</title>
 </head>
 
 <body>
-    <!-- <div class="scanner-line"></div> REMOVED V4 -->
-    <div class="grid-overlay"></div>
-    <div class="smoke-bg" id="smoke-canvas"></div>
-
-    <!-- Navigation -->
-    <nav class="nav-bar">
-        <div class="logo">SSG<span class="dot">.</span></div>
-        <div class="menu-toggle">MENU</div> <!-- New Mobile Trigger -->
-        <ul class="nav-links">
-            <li><a href="#intelligence">Intelligence</a></li>
-            <li><a href="#ventures">Ventures</a></li>
-            <li><a href="#protocol">Protocol</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <header id="hero" class="hero-section">
-        <div class="hero-content">
-            <p class="hero-kicker">STRATEGIC FORESIGHT</p>
-            <h1 class="hero-title">SOVEREIGN <br> <span class="serif-italic">SYSTEMS</span></h1>
-            <div class="hero-decoration"></div>
-            <p class="hero-sub">PRECISION. INFRASTRUCTURE. CAPITAL.</p>
-        </div>
-    </header>
-
-    <!-- Intelligence Section (Services) -->
-    <section id="intelligence" class="section">
-        <div class="section-header">
-            <span class="section-number">01</span>
-            <h2 class="section-title">INTELLIGENCE</h2>
-        </div>
-        <div class="card-grid">
-            <div class="glass-card">
-                <h3>PREDICTIVE MODELING</h3>
-                <p>Data-driven forecast methodologies for high-stakes environments.</p>
-                <div class="card-line"></div>
-            </div>
-            <div class="glass-card">
-                <h3>GEOPOLITICAL ALPHA</h3>
-                <p>Navigating sovereign risk and regulatory arbitrage.</p>
-                <div class="card-line"></div>
-            </div>
-            <div class="glass-card">
-                <h3>SYSTEMS ARCHITECTURE</h3>
-                <p>Robust digital infrastructure for scale and security.</p>
-                <div class="card-line"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ventures Section (Work/Portfolio) -->
-    <section id="ventures" class="section">
-        <div class="section-header">
-            <span class="section-number">02</span>
-            <h2 class="section-title">VENTURES</h2>
-        </div>
-        <div class="ventures-list">
-            <article class="venture-row">
-                <span class="venture-id">V-091</span>
-                <h3 class="venture-name">AETHER DYNAMICS</h3>
-                <p class="venture-cat">AEROSPACE / DEFENSE</p>
-                <a href="#" class="venture-link">VIEW</a>
-            </article>
-            <article class="venture-row">
-                <span class="venture-id">V-042</span>
-                <h3 class="venture-name">OBLIVION LABS</h3>
-                <p class="venture-cat">CRYPTOGRAPHY / AI</p>
-                <a href="#" class="venture-link">VIEW</a>
-            </article>
-            <article class="venture-row">
-                <span class="venture-id">V-105</span>
-                <h3 class="venture-name">NEXUS CAPITAL</h3>
-                <p class="venture-cat">FINTECH INFRASTRUCTURE</p>
-                <a href="#" class="venture-link">VIEW</a>
-            </article>
-        </div>
-    </section>
-
-    <!-- Protocol Section (About) -->
-    <section id="protocol" class="section">
-        <div class="section-header">
-            <span class="section-number">03</span>
-            <h2 class="section-title">PROTOCOL</h2>
-        </div>
-        <div class="protocol-content">
-            <p class="protocol-text">
-                WE OPERATE AT THE INTERSECTION OF INSTITUTIONAL CAPITAL AND RADICAL INNOVATION.
-                <span class="highlight">SILENCE IS OUR CURRENCY.</span>
-                RESULTS ARE OUR ONLY METRIC.
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="section-header">
-            <span class="section-number">04</span>
-            <h2 class="section-title">INITIATE</h2>
-        </div>
-        <form class="contact-form">
-            <div class="input-group">
-                <label>IDENTITY</label>
-                <input type="text" placeholder="NAME / ORG">
-            </div>
-            <div class="input-group">
-                <label>COORDINATES</label>
-                <input type="email" placeholder="SECURE EMAIL">
-            </div>
-            <button type="submit" class="btn-submit">TRANSMIT REQUEST</button>
-        </form>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <span>&copy; 2026 SOVEREIGN SYSTEMS GROUP.</span>
-            <span>ALL RIGHTS RESERVED.</span>
-            <span>ZÜRICH / NEW YORK / SINGAPORE</span>
-        </div>
-    </footer>
-
-    <script src="scripts/main.js" defer></script>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
 </body>
 
 </html>
